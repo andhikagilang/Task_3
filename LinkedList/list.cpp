@@ -60,3 +60,23 @@ address cari(list l,infotype x)
     }
     return NULL;
 }
+void deletefirst(list *l,address *p)
+{
+    *p=(*l).awal;
+    (*l).awal=next((*l).awal);
+    next(*p)=NULL;
+    delete p;
+}
+void deletelast(list *l,address *p)
+{
+    address Q;
+    Q=(*l).awal;
+    while(next(next(Q))!=NULL)
+    {
+        Q=next(Q);
+    }
+    *p=next(Q);
+    next(Q)=NULL;
+    delete p;
+
+}
